@@ -54,6 +54,52 @@ public class Polinomio1 {
         p[dim] = null;
         dim--;
     }
+    
+    public Polinomio1 sumar(Polinomio1 otro) {
+        Polinomio1 resultado = new Polinomio1(this.p.length + otro.p.length);
+        for (Monomio monomio : this.p) {
+            if (monomio != null) {
+                resultado.insertar('+', monomio.getCoef(), monomio.getExp());
+            }
+        }
+        for (Monomio monomio : otro.p) {
+            if (monomio != null) {
+                resultado.insertar('+', monomio.getCoef(), monomio.getExp());
+            }
+        }
+        return resultado;
+    }
+
+    public Polinomio1 restar(Polinomio1 otro) {
+        Polinomio1 resultado = new Polinomio1(this.p.length + otro.p.length);
+        for (Monomio monomio : this.p) {
+            if (monomio != null) {
+                resultado.insertar('+', monomio.getCoef(), monomio.getExp());
+            }
+        }
+        for (Monomio monomio : otro.p) {
+            if (monomio != null) {
+                resultado.insertar('-', monomio.getCoef(), monomio.getExp());
+            }
+        }
+        return resultado;
+    }
+
+    public Polinomio1 multiplicar(Polinomio1 otro) {
+        Polinomio1 resultado = new Polinomio1(this.p.length * otro.p.length);
+        for (Monomio monomioA : this.p) {
+            if (monomioA != null) {
+                for (Monomio monomioB : otro.p) {
+                    if (monomioB != null) {
+                        int nuevoCoef = monomioA.getCoef() * monomioB.getCoef();
+                        int nuevoExp = monomioA.getExp() + monomioB.getExp();
+                        resultado.insertar('+', nuevoCoef, nuevoExp);
+                    }
+                }
+            }
+        }
+        return resultado;
+    }
 
     @Override
     public String toString() {
