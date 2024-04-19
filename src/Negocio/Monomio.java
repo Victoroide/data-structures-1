@@ -10,55 +10,50 @@ public class Monomio {
     }
 
     public Monomio(char signo, int coef, int exp) {
-        setExp(exp);
-        setCoef(coef);
-        setSigno(signo);
-    }
-
-    public void setExp(int exp) {
-        this.exp = Math.max(exp, 0);
+        this.coef = coef;
+        this.exp = exp;
+        this.setSigno(signo);
     }
 
     public void setCoef(int coef) {
         this.coef = coef;
     }
 
+    public void setExp(int exp) {
+        if (exp < 0) {
+            throw new IllegalArgumentException("Exponente no puede ser negativo");
+        }
+        this.exp = exp;
+    }
+
     public void setSigno(char signo) {
         if (signo == '-') {
             this.coef = -Math.abs(this.coef);
-        } else {
-            this.coef = Math.abs(this.coef);
         }
     }
 
     public int getCoef() {
-        return this.coef;
+        return coef;
     }
 
     public int getExp() {
-        return this.exp;
+        return exp;
+    }
+
+    public void sumar(Monomio m) {
+        if (this.exp == m.exp) {
+            this.coef += m.coef;
+        } else {
+            throw new IllegalArgumentException("No se pueden sumar monomios de diferente exponente");
+        }
     }
 
     @Override
     public String toString() {
-        if (this.coef == 0) {
-            return "";
-        }
-        if (this.exp == 0) {
-            return String.format("%d", this.coef);
-        }
-        if (this.coef == 1) {
-            return (this.exp == 1) ? "X" : "X^" + this.exp;
-        }
-        if (this.coef == -1) {
-            return (this.exp == 1) ? "-X" : "-X^" + this.exp;
-        }
-        return String.format("%dX^%d", this.coef, this.exp);
-    }
-
-    public void sumar(Monomio otro) {
-        if (this.exp == otro.exp) {
-            this.coef += otro.coef;
-        }
+        if (coef == 0) return "";
+        if (exp == 0) return String.format("%d", coef);
+        String coefStr = (Math.abs(coef) == 1 && exp != 0) ? "" : String.format("%d", Math.abs(coef));
+        String signStr = (coef < 0) ? "-" : "";
+        return String.format("%s%sX%s", signStr, coefStr, (exp == 1) ? "" : "^" + exp);
     }
 }
