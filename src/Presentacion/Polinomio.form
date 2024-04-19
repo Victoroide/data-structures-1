@@ -17,7 +17,7 @@
       <Dimension value="[540, 222]"/>
     </Property>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[540, 350]"/>
+      <Dimension value="[540, 360]"/>
     </Property>
   </Properties>
   <SyntheticProperties>
@@ -71,14 +71,11 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="24" style="1"/>
         </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="99" green="0" red="33" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Polinomio"/>
+        <Property name="text" type="java.lang.String" value="TDA Polinomio"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="210" y="40" width="-1" height="-1"/>
+          <AbsoluteConstraints x="180" y="30" width="-1" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>

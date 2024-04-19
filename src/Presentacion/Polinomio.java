@@ -56,7 +56,7 @@ public class Polinomio extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(540, 222));
-        setPreferredSize(new java.awt.Dimension(540, 350));
+        setPreferredSize(new java.awt.Dimension(540, 360));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         CBx1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+", "-" }));
@@ -64,9 +64,8 @@ public class Polinomio extends javax.swing.JFrame {
         getContentPane().add(TxtCoef, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 41, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(51, 0, 153));
-        jLabel1.setText("Polinomio");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, -1, -1));
+        jLabel1.setText("TDA Polinomio");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, -1, -1));
         getContentPane().add(TxtExp, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 42, -1));
 
         jButton1.setText("Insertar");
@@ -233,7 +232,13 @@ public class Polinomio extends javax.swing.JFrame {
         try {
             double x = Double.parseDouble(EvaluarTextField.getText());
             double resultado = (PrimerPolinomioSelect.isSelected() ? A : B).evaluar(x);
-            Resultado.setText(String.format("%.2f", resultado));
+            if (resultado == (long) resultado) {
+                // El resultado es efectivamente un entero
+                Resultado.setText(String.format("%d", (long) resultado));
+            } else {
+                // El resultado es un número con parte decimal
+                Resultado.setText(String.format("%.2f", resultado));
+            }
         } catch (NumberFormatException ex) {
             Resultado.setText("Entrada no válida");
         }
