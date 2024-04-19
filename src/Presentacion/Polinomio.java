@@ -35,25 +35,27 @@ public class Polinomio extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        Resultado = new javax.swing.JTextArea();
         PrimerPolinomio = new javax.swing.JTextField();
         SegundoPolinomio = new javax.swing.JTextField();
         PrimerPolinomioSelect = new javax.swing.JRadioButton();
         SegundoPolinomioSelect = new javax.swing.JRadioButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        Resultado = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         CBx1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+", "-" }));
-        getContentPane().add(CBx1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, -1, -1));
-        getContentPane().add(TxtCoef, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 41, -1));
+        getContentPane().add(CBx1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 50, -1));
+        getContentPane().add(TxtCoef, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 41, -1));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(51, 0, 153));
         jLabel1.setText("Polinomio");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, -1, -1));
-        getContentPane().add(TxtExp, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 42, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, -1, -1));
+        getContentPane().add(TxtExp, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 70, 42, -1));
 
         jButton1.setText("Insertar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -61,27 +63,21 @@ public class Polinomio extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, -1, -1));
 
         jLabel3.setText("Coef");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 50, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, -1, -1));
 
         jLabel4.setText("Exp");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 50, -1, -1));
-
-        Resultado.setColumns(20);
-        Resultado.setRows(5);
-        jScrollPane1.setViewportView(Resultado);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 390, 130));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 50, -1, -1));
 
         PrimerPolinomio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PrimerPolinomioActionPerformed(evt);
             }
         });
-        getContentPane().add(PrimerPolinomio, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 100, -1));
-        getContentPane().add(SegundoPolinomio, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 100, -1));
+        getContentPane().add(PrimerPolinomio, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 210, -1));
+        getContentPane().add(SegundoPolinomio, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 210, -1));
 
         buttonGroup1.add(PrimerPolinomioSelect);
         PrimerPolinomioSelect.setText("1º P(x)");
@@ -90,7 +86,7 @@ public class Polinomio extends javax.swing.JFrame {
                 PrimerPolinomioSelectActionPerformed(evt);
             }
         });
-        getContentPane().add(PrimerPolinomioSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, -1, -1));
+        getContentPane().add(PrimerPolinomioSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, -1, -1));
 
         buttonGroup1.add(SegundoPolinomioSelect);
         SegundoPolinomioSelect.setText("2º P(x)");
@@ -99,7 +95,23 @@ public class Polinomio extends javax.swing.JFrame {
                 SegundoPolinomioSelectActionPerformed(evt);
             }
         });
-        getContentPane().add(SegundoPolinomioSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, -1, -1));
+        getContentPane().add(SegundoPolinomioSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 90, -1, -1));
+
+        jLabel2.setText("P1(X)");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
+
+        jLabel5.setText("P2(X)");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
+
+        Resultado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResultadoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 210, -1));
+
+        jLabel6.setText("Resultado");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 60, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -130,6 +142,10 @@ public class Polinomio extends javax.swing.JFrame {
     private void PrimerPolinomioSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrimerPolinomioSelectActionPerformed
 
     }//GEN-LAST:event_PrimerPolinomioSelectActionPerformed
+
+    private void ResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResultadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ResultadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,7 +186,7 @@ public class Polinomio extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CBx1;
     private javax.swing.JTextField PrimerPolinomio;
     private javax.swing.JRadioButton PrimerPolinomioSelect;
-    private javax.swing.JTextArea Resultado;
+    private javax.swing.JTextField Resultado;
     private javax.swing.JTextField SegundoPolinomio;
     private javax.swing.JRadioButton SegundoPolinomioSelect;
     private javax.swing.JTextField TxtCoef;
@@ -181,8 +197,10 @@ public class Polinomio extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     // End of variables declaration//GEN-END:variables
 }
