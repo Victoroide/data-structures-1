@@ -51,9 +51,10 @@ public class Monomio {
     @Override
     public String toString() {
         if (coef == 0) return "";
-        if (exp == 0) return String.format("%d", coef);
-        String coefStr = (Math.abs(coef) == 1 && exp != 0) ? "" : String.format("%d", Math.abs(coef));
+        String coefStr = (coef == 1 && exp != 0) ? "" : String.valueOf(Math.abs(coef));
         String signStr = (coef < 0) ? "-" : "";
-        return String.format("%s%sX%s", signStr, coefStr, (exp == 1) ? "" : "^" + exp);
+        if (exp == 0) return signStr + Math.abs(coef);
+        if (exp == 1) return signStr + coefStr + "X";
+        return signStr + coefStr + "X^" + exp;
     }
 }
