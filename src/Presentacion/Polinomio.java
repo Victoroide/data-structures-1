@@ -5,6 +5,7 @@
  */
 package Presentacion;
 import Negocio.Polinomio1;
+import Negocio.Monomio;
 public class Polinomio extends javax.swing.JFrame {
 
     Polinomio1 A;
@@ -46,10 +47,16 @@ public class Polinomio extends javax.swing.JFrame {
         Sumar = new javax.swing.JButton();
         Multiplicar = new javax.swing.JButton();
         Restar = new javax.swing.JButton();
+        EvaluarButton = new javax.swing.JButton();
+        ObtenerMonomioButton = new javax.swing.JButton();
+        EvaluarTextField = new javax.swing.JTextField();
+        GradoTextField = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(540, 222));
-        setPreferredSize(new java.awt.Dimension(500, 300));
+        setPreferredSize(new java.awt.Dimension(540, 350));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         CBx1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+", "-" }));
@@ -142,6 +149,36 @@ public class Polinomio extends javax.swing.JFrame {
         });
         getContentPane().add(Restar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 90, -1));
 
+        EvaluarButton.setText("Evaluar X");
+        EvaluarButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EvaluarButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(EvaluarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 130, -1));
+
+        ObtenerMonomioButton.setText("Obtener Monomio");
+        ObtenerMonomioButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ObtenerMonomioButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ObtenerMonomioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, 130, -1));
+
+        EvaluarTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EvaluarTextFieldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(EvaluarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, 50, -1));
+        getContentPane().add(GradoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 50, -1));
+
+        jLabel7.setText("Grado");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, -1, -1));
+
+        jLabel8.setText("Valor de X");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, -1, -1));
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -192,6 +229,30 @@ public class Polinomio extends javax.swing.JFrame {
         Resultado.setText(resultado.toString());
     }//GEN-LAST:event_MultiplicarActionPerformed
 
+    private void EvaluarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EvaluarButtonActionPerformed
+        try {
+            double x = Double.parseDouble(EvaluarTextField.getText());
+            double resultado = (PrimerPolinomioSelect.isSelected() ? A : B).evaluar(x);
+            Resultado.setText(String.format("%.2f", resultado));
+        } catch (NumberFormatException ex) {
+            Resultado.setText("Entrada no válida");
+        }
+    }//GEN-LAST:event_EvaluarButtonActionPerformed
+
+    private void ObtenerMonomioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ObtenerMonomioButtonActionPerformed
+        try {
+            int grado = Integer.parseInt(GradoTextField.getText());
+            Monomio m = (PrimerPolinomioSelect.isSelected() ? A : B).obtenerMonomio(grado);
+            Resultado.setText(m != null ? m.toString() : "Monomio no encontrado");
+        } catch (NumberFormatException ex) {
+            Resultado.setText("Entrada no válida");
+        }
+    }//GEN-LAST:event_ObtenerMonomioButtonActionPerformed
+
+    private void EvaluarTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EvaluarTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EvaluarTextFieldActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -229,7 +290,11 @@ public class Polinomio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CBx1;
+    private javax.swing.JButton EvaluarButton;
+    private javax.swing.JTextField EvaluarTextField;
+    private javax.swing.JTextField GradoTextField;
     private javax.swing.JButton Multiplicar;
+    private javax.swing.JButton ObtenerMonomioButton;
     private javax.swing.JTextField PrimerPolinomio;
     private javax.swing.JRadioButton PrimerPolinomioSelect;
     private javax.swing.JButton Restar;
@@ -250,5 +315,7 @@ public class Polinomio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
 }

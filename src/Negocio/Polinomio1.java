@@ -100,6 +100,25 @@ public class Polinomio1 {
         }
         return resultado;
     }
+    
+    public double evaluar(double x) {
+        double resultado = 0.0;
+        for (Monomio m : p) {
+            if (m != null) {
+                resultado += m.getCoef() * Math.pow(x, m.getExp());
+            }
+        }
+        return resultado;
+    }
+
+    public Monomio obtenerMonomio(int exponente) {
+        for (Monomio m : p) {
+            if (m != null && m.getExp() == exponente) {
+                return m;
+            }
+        }
+        return null; // Retorna null si no se encuentra el monomio con el exponente dado.
+    }
 
     @Override
     public String toString() {
