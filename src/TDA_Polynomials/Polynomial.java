@@ -1,20 +1,20 @@
-package TDA_Polinomios;
+package TDA_Polynomials;
 
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class Polinomio {
-    private Monomio[] p;
+public class Polynomial {
+    private Monomial[] p;
     private int dim;
 
-    public Polinomio(int capacidad) {
-        p = new Monomio[capacidad];
+    public Polynomial(int capacidad) {
+        p = new Monomial[capacidad];
         dim = -1;
     }
 
     public void insertar(char signo, int coef, int exp) {
         if (coef == 0) return;
-        Monomio nuevo = new Monomio(signo, coef, exp);
+        Monomial nuevo = new Monomial(signo, coef, exp);
         boolean encontrado = false;
         for (int i = 0; i <= dim; i++) {
             if (p[i].getExp() == exp) {
@@ -36,9 +36,9 @@ public class Polinomio {
     }
 
     private void ordenarPorExponente() {
-        Arrays.sort(p, 0, dim + 1, new Comparator<Monomio>() {
+        Arrays.sort(p, 0, dim + 1, new Comparator<Monomial>() {
             @Override
-            public int compare(Monomio m1, Monomio m2) {
+            public int compare(Monomial m1, Monomial m2) {
                 return m2.getExp() - m1.getExp();
             }
         });
@@ -55,14 +55,14 @@ public class Polinomio {
         dim--;
     }
     
-    public Polinomio sumar(Polinomio otro) {
-        Polinomio resultado = new Polinomio(this.p.length + otro.p.length);
-        for (Monomio monomio : this.p) {
+    public Polynomial sumar(Polynomial otro) {
+        Polynomial resultado = new Polynomial(this.p.length + otro.p.length);
+        for (Monomial monomio : this.p) {
             if (monomio != null) {
                 resultado.insertar('+', monomio.getCoef(), monomio.getExp());
             }
         }
-        for (Monomio monomio : otro.p) {
+        for (Monomial monomio : otro.p) {
             if (monomio != null) {
                 resultado.insertar('+', monomio.getCoef(), monomio.getExp());
             }
@@ -70,14 +70,14 @@ public class Polinomio {
         return resultado;
     }
 
-    public Polinomio restar(Polinomio otro) {
-        Polinomio resultado = new Polinomio(this.p.length + otro.p.length);
-        for (Monomio monomio : this.p) {
+    public Polynomial restar(Polynomial otro) {
+        Polynomial resultado = new Polynomial(this.p.length + otro.p.length);
+        for (Monomial monomio : this.p) {
             if (monomio != null) {
                 resultado.insertar('+', monomio.getCoef(), monomio.getExp());
             }
         }
-        for (Monomio monomio : otro.p) {
+        for (Monomial monomio : otro.p) {
             if (monomio != null) {
                 resultado.insertar('-', monomio.getCoef(), monomio.getExp());
             }
@@ -85,11 +85,11 @@ public class Polinomio {
         return resultado;
     }
 
-    public Polinomio multiplicar(Polinomio otro) {
-        Polinomio resultado = new Polinomio(this.p.length * otro.p.length);
-        for (Monomio monomioA : this.p) {
+    public Polynomial multiplicar(Polynomial otro) {
+        Polynomial resultado = new Polynomial(this.p.length * otro.p.length);
+        for (Monomial monomioA : this.p) {
             if (monomioA != null) {
-                for (Monomio monomioB : otro.p) {
+                for (Monomial monomioB : otro.p) {
                     if (monomioB != null) {
                         int nuevoCoef = monomioA.getCoef() * monomioB.getCoef();
                         int nuevoExp = monomioA.getExp() + monomioB.getExp();
@@ -103,7 +103,7 @@ public class Polinomio {
     
     public double evaluar(double x) {
         double resultado = 0.0;
-        for (Monomio m : p) {
+        for (Monomial m : p) {
             if (m != null) {
                 resultado += m.getCoef() * Math.pow(x, m.getExp());
             }
@@ -111,8 +111,8 @@ public class Polinomio {
         return resultado;
     }
 
-    public Monomio obtenerMonomio(int exponente) {
-        for (Monomio m : p) {
+    public Monomial obtenerMonomio(int exponente) {
+        for (Monomial m : p) {
             if (m != null && m.getExp() == exponente) {
                 return m;
             }

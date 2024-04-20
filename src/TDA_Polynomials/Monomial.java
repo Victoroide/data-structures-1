@@ -1,15 +1,15 @@
-package TDA_Polinomios;
+package TDA_Polynomials;
 
-public class Monomio {
+public class Monomial {
     private int coef;
     private int exp;
 
-    public Monomio() {
+    public Monomial() {
         this.coef = 0;
         this.exp = 0;
     }
 
-    public Monomio(char signo, int coef, int exp) {
+    public Monomial(char signo, int coef, int exp) {
         this.coef = coef;
         this.exp = exp;
         this.setSigno(signo);
@@ -40,7 +40,7 @@ public class Monomio {
         return exp;
     }
 
-    public void sumar(Monomio m) {
+    public void sumar(Monomial m) {
         if (this.exp == m.exp) {
             this.coef += m.coef;
         } else {

@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TDA_Polinomios;
-import TDA_Polinomios.Polinomio;
-import TDA_Polinomios.Monomio;
-public class PolinomioView extends javax.swing.JFrame {
+package TDA_Polynomials;
+import TDA_Polynomials.Polynomial;
+import TDA_Polynomials.Monomial;
+public class PolynomialView extends javax.swing.JFrame {
 
-    Polinomio A;
-    Polinomio B;
-    public PolinomioView() {
+    Polynomial A;
+    Polynomial B;
+    public PolynomialView() {
         initComponents();
-        A=new Polinomio(5);
-        B=new Polinomio(5);
+        A=new Polynomial(5);
+        B=new Polynomial(5);
     }
 
     /**
@@ -213,17 +213,17 @@ public class PolinomioView extends javax.swing.JFrame {
     }//GEN-LAST:event_ResultadoActionPerformed
 
     private void SumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SumarActionPerformed
-        Polinomio resultado = A.sumar(B);
+        Polynomial resultado = A.sumar(B);
         Resultado.setText(resultado.toString());
     }//GEN-LAST:event_SumarActionPerformed
 
     private void RestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RestarActionPerformed
-        Polinomio resultado = A.restar(B);
+        Polynomial resultado = A.restar(B);
         Resultado.setText(resultado.toString());
     }//GEN-LAST:event_RestarActionPerformed
 
     private void MultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MultiplicarActionPerformed
-        Polinomio resultado = A.multiplicar(B);
+        Polynomial resultado = A.multiplicar(B);
         Resultado.setText(resultado.toString());
     }//GEN-LAST:event_MultiplicarActionPerformed
 
@@ -246,7 +246,7 @@ public class PolinomioView extends javax.swing.JFrame {
     private void ObtenerMonomioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ObtenerMonomioButtonActionPerformed
         try {
             int grado = Integer.parseInt(GradoTextField.getText());
-            Monomio m = (PrimerPolinomioSelect.isSelected() ? A : B).obtenerMonomio(grado);
+            Monomial m = (PrimerPolinomioSelect.isSelected() ? A : B).obtenerMonomio(grado);
             Resultado.setText(m != null ? m.toString() : "Monomio no encontrado");
         } catch (NumberFormatException ex) {
             Resultado.setText("Entrada no válida");
@@ -274,21 +274,23 @@ public class PolinomioView extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PolinomioView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PolynomialView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PolinomioView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PolynomialView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PolinomioView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PolynomialView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PolinomioView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PolynomialView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PolinomioView().setVisible(true);
+                new PolynomialView().setVisible(true);
             }
         });
     }
