@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Practices.Practice1.Exercise1;
+import java.util.Scanner;
 
 /**
  *
@@ -17,21 +18,30 @@ public class Piolin extends Canario {
     }
 
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
         Piolin piolin = new Piolin('M', 2, 5);
         Loro loro = new Loro('H', 3, 'N', "Verde");
-
+        
+        System.out.println("Información inicial:");
         piolin.quienSoy();
         loro.quienSoy();
-
+        
         piolin.altura();
         loro.deDondeEres();
-
-        piolin.tamano = 20;
+        
+        System.out.println("\nIntroduce nuevo tamaño para Piolin:");
+        float nuevoTamano = scanner.nextFloat();
+        piolin.tamano = nuevoTamano;
         piolin.altura();
-
-        loro.region = 'S';
+        
+        System.out.println("Introduce nueva región para el Loro (N/S/E/O):");
+        char nuevaRegion = scanner.next().charAt(0);
+        loro.region = nuevaRegion;
         loro.deDondeEres();
-
-        System.out.println("Número de Aves Creadas: " + Ave.getNumeroDeAves());
+        
+        System.out.println("\nNúmero de Aves Creadas: " + Ave.getNumeroDeAves());
+        
+        scanner.close();
     }
 }
