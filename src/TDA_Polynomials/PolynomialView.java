@@ -33,24 +33,24 @@ public class PolynomialView extends javax.swing.JFrame {
         TxtCoef = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         TxtExp = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        InsertButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        PrimerPolinomio = new javax.swing.JTextField();
-        SegundoPolinomio = new javax.swing.JTextField();
-        PrimerPolinomioSelect = new javax.swing.JRadioButton();
-        SegundoPolinomioSelect = new javax.swing.JRadioButton();
+        FirstPolynomial = new javax.swing.JTextField();
+        SecondPolynomial = new javax.swing.JTextField();
+        FirstPolynomialSelect = new javax.swing.JRadioButton();
+        SecondPolynomialSelect = new javax.swing.JRadioButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        Resultado = new javax.swing.JTextField();
+        Result = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        Sumar = new javax.swing.JButton();
-        Multiplicar = new javax.swing.JButton();
-        Restar = new javax.swing.JButton();
-        EvaluarButton = new javax.swing.JButton();
-        ObtenerMonomioButton = new javax.swing.JButton();
-        EvaluarTextField = new javax.swing.JTextField();
-        GradoTextField = new javax.swing.JTextField();
+        SumButton = new javax.swing.JButton();
+        MultiplyButton = new javax.swing.JButton();
+        SubtractButton = new javax.swing.JButton();
+        EvaluateButton = new javax.swing.JButton();
+        GetMonomialButton = new javax.swing.JButton();
+        EvaluateTextField = new javax.swing.JTextField();
+        GradeTextField = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
@@ -67,13 +67,13 @@ public class PolynomialView extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 30, -1, -1));
         getContentPane().add(TxtExp, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 42, -1));
 
-        jButton1.setText("Insertar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        InsertButton.setText("Insertar");
+        InsertButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                InsertButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 80, -1));
+        getContentPane().add(InsertButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 200, 80, -1));
 
         jLabel3.setText("Coef");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(415, 80, 30, -1));
@@ -81,31 +81,31 @@ public class PolynomialView extends javax.swing.JFrame {
         jLabel4.setText("Exp");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 20, -1));
 
-        PrimerPolinomio.addActionListener(new java.awt.event.ActionListener() {
+        FirstPolynomial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PrimerPolinomioActionPerformed(evt);
+                FirstPolynomialActionPerformed(evt);
             }
         });
-        getContentPane().add(PrimerPolinomio, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 210, -1));
-        getContentPane().add(SegundoPolinomio, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 210, -1));
+        getContentPane().add(FirstPolynomial, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 210, -1));
+        getContentPane().add(SecondPolynomial, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 210, -1));
 
-        buttonGroup1.add(PrimerPolinomioSelect);
-        PrimerPolinomioSelect.setText("1º P(x)");
-        PrimerPolinomioSelect.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(FirstPolynomialSelect);
+        FirstPolynomialSelect.setText("1º P(x)");
+        FirstPolynomialSelect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PrimerPolinomioSelectActionPerformed(evt);
+                FirstPolynomialSelectActionPerformed(evt);
             }
         });
-        getContentPane().add(PrimerPolinomioSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, -1, -1));
+        getContentPane().add(FirstPolynomialSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, -1, -1));
 
-        buttonGroup1.add(SegundoPolinomioSelect);
-        SegundoPolinomioSelect.setText("2º P(x)");
-        SegundoPolinomioSelect.addActionListener(new java.awt.event.ActionListener() {
+        buttonGroup1.add(SecondPolynomialSelect);
+        SecondPolynomialSelect.setText("2º P(x)");
+        SecondPolynomialSelect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SegundoPolinomioSelectActionPerformed(evt);
+                SecondPolynomialSelectActionPerformed(evt);
             }
         });
-        getContentPane().add(SegundoPolinomioSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, -1, -1));
+        getContentPane().add(SecondPolynomialSelect, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, -1, -1));
 
         jLabel2.setText("P1(X)");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
@@ -113,63 +113,63 @@ public class PolynomialView extends javax.swing.JFrame {
         jLabel5.setText("P2(X)");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
-        Resultado.addActionListener(new java.awt.event.ActionListener() {
+        Result.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ResultadoActionPerformed(evt);
+                ResultActionPerformed(evt);
             }
         });
-        getContentPane().add(Resultado, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 210, -1));
+        getContentPane().add(Result, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 210, -1));
 
         jLabel6.setText("Resultado");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 60, 20));
 
-        Sumar.setText("Sumar");
-        Sumar.addActionListener(new java.awt.event.ActionListener() {
+        SumButton.setText("Sumar");
+        SumButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SumarActionPerformed(evt);
+                SumButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(Sumar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 90, -1));
+        getContentPane().add(SumButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 140, 90, -1));
 
-        Multiplicar.setText("Multiplicar");
-        Multiplicar.addActionListener(new java.awt.event.ActionListener() {
+        MultiplyButton.setText("Multiplicar");
+        MultiplyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MultiplicarActionPerformed(evt);
+                MultiplyButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(Multiplicar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 90, -1));
+        getContentPane().add(MultiplyButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 200, 90, -1));
 
-        Restar.setText("Restar");
-        Restar.addActionListener(new java.awt.event.ActionListener() {
+        SubtractButton.setText("Restar");
+        SubtractButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RestarActionPerformed(evt);
+                SubtractButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(Restar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 90, -1));
+        getContentPane().add(SubtractButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 170, 90, -1));
 
-        EvaluarButton.setText("Evaluar X");
-        EvaluarButton.addActionListener(new java.awt.event.ActionListener() {
+        EvaluateButton.setText("Evaluar X");
+        EvaluateButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EvaluarButtonActionPerformed(evt);
+                EvaluateButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(EvaluarButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 130, -1));
+        getContentPane().add(EvaluateButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 270, 130, -1));
 
-        ObtenerMonomioButton.setText("Obtener Monomio");
-        ObtenerMonomioButton.addActionListener(new java.awt.event.ActionListener() {
+        GetMonomialButton.setText("Obtener Monomio");
+        GetMonomialButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ObtenerMonomioButtonActionPerformed(evt);
+                GetMonomialButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(ObtenerMonomioButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, 130, -1));
+        getContentPane().add(GetMonomialButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, 130, -1));
 
-        EvaluarTextField.addActionListener(new java.awt.event.ActionListener() {
+        EvaluateTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EvaluarTextFieldActionPerformed(evt);
+                EvaluateTextFieldActionPerformed(evt);
             }
         });
-        getContentPane().add(EvaluarTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, 50, -1));
-        getContentPane().add(GradoTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 50, -1));
+        getContentPane().add(EvaluateTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, 50, -1));
+        getContentPane().add(GradeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 50, -1));
 
         jLabel7.setText("Grado");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, -1, -1));
@@ -181,81 +181,81 @@ public class PolynomialView extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void InsertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertButtonActionPerformed
         int Coef = Integer.parseInt(TxtCoef.getText());
         int Exp = Integer.parseInt(TxtExp.getText());
-        String signo = CBx1.getSelectedItem().toString();
-        char Signo = signo.charAt(0);
+        String sign = CBx1.getSelectedItem().toString();
+        char Sign = sign.charAt(0);
 
-        if (PrimerPolinomioSelect.isSelected()) {
-            A.insertar(Signo, Coef, Exp);
-            PrimerPolinomio.setText(A.toString());
-        } else if (SegundoPolinomioSelect.isSelected()) {
-            B.insertar(Signo, Coef, Exp);
-            SegundoPolinomio.setText(B.toString());
+        if (FirstPolynomialSelect.isSelected()) {
+            A.insertar(Sign, Coef, Exp);
+            FirstPolynomial.setText(A.toString());
+        } else if (SecondPolynomialSelect.isSelected()) {
+            B.insertar(Sign, Coef, Exp);
+            SecondPolynomial.setText(B.toString());
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_InsertButtonActionPerformed
 
-    private void PrimerPolinomioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrimerPolinomioActionPerformed
+    private void FirstPolynomialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstPolynomialActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_PrimerPolinomioActionPerformed
+    }//GEN-LAST:event_FirstPolynomialActionPerformed
 
-    private void SegundoPolinomioSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SegundoPolinomioSelectActionPerformed
+    private void SecondPolynomialSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SecondPolynomialSelectActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SegundoPolinomioSelectActionPerformed
+    }//GEN-LAST:event_SecondPolynomialSelectActionPerformed
 
-    private void PrimerPolinomioSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrimerPolinomioSelectActionPerformed
+    private void FirstPolynomialSelectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FirstPolynomialSelectActionPerformed
 
-    }//GEN-LAST:event_PrimerPolinomioSelectActionPerformed
+    }//GEN-LAST:event_FirstPolynomialSelectActionPerformed
 
-    private void ResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResultadoActionPerformed
+    private void ResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResultActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ResultadoActionPerformed
+    }//GEN-LAST:event_ResultActionPerformed
 
-    private void SumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SumarActionPerformed
-        Polynomial resultado = A.sumar(B);
-        Resultado.setText(resultado.toString());
-    }//GEN-LAST:event_SumarActionPerformed
+    private void SumButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SumButtonActionPerformed
+        Polynomial result = A.sumar(B);
+        Result.setText(result.toString());
+    }//GEN-LAST:event_SumButtonActionPerformed
 
-    private void RestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RestarActionPerformed
-        Polynomial resultado = A.restar(B);
-        Resultado.setText(resultado.toString());
-    }//GEN-LAST:event_RestarActionPerformed
+    private void SubtractButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubtractButtonActionPerformed
+        Polynomial result = A.restar(B);
+        Result.setText(result.toString());
+    }//GEN-LAST:event_SubtractButtonActionPerformed
 
-    private void MultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MultiplicarActionPerformed
-        Polynomial resultado = A.multiplicar(B);
-        Resultado.setText(resultado.toString());
-    }//GEN-LAST:event_MultiplicarActionPerformed
+    private void MultiplyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MultiplyButtonActionPerformed
+        Polynomial result = A.multiplicar(B);
+        Result.setText(result.toString());
+    }//GEN-LAST:event_MultiplyButtonActionPerformed
 
-    private void EvaluarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EvaluarButtonActionPerformed
+    private void EvaluateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EvaluateButtonActionPerformed
         try {
-            double x = Double.parseDouble(EvaluarTextField.getText());
-            double resultado = (PrimerPolinomioSelect.isSelected() ? A : B).evaluar(x);
-            if (resultado == (long) resultado) {
-                // El resultado es efectivamente un entero
-                Resultado.setText(String.format("%d", (long) resultado));
+            double x = Double.parseDouble(EvaluateTextField.getText());
+            double result = (FirstPolynomialSelect.isSelected() ? A : B).evaluar(x);
+            if (result == (long) result) {
+                // El result es efectivamente un entero
+                Result.setText(String.format("%d", (long) result));
             } else {
-                // El resultado es un número con parte decimal
-                Resultado.setText(String.format("%.2f", resultado));
+                // El result es un número con parte decimal
+                Result.setText(String.format("%.2f", result));
             }
         } catch (NumberFormatException ex) {
-            Resultado.setText("Entrada no válida");
+            Result.setText("Entrada no válida");
         }
-    }//GEN-LAST:event_EvaluarButtonActionPerformed
+    }//GEN-LAST:event_EvaluateButtonActionPerformed
 
-    private void ObtenerMonomioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ObtenerMonomioButtonActionPerformed
+    private void GetMonomialButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GetMonomialButtonActionPerformed
         try {
-            int grado = Integer.parseInt(GradoTextField.getText());
-            Monomial m = (PrimerPolinomioSelect.isSelected() ? A : B).obtenerMonomio(grado);
-            Resultado.setText(m != null ? m.toString() : "Monomio no encontrado");
+            int grade = Integer.parseInt(GradeTextField.getText());
+            Monomial m = (FirstPolynomialSelect.isSelected() ? A : B).obtenerMonomio(grade);
+            Result.setText(m != null ? m.toString() : "Monomio no encontrado");
         } catch (NumberFormatException ex) {
-            Resultado.setText("Entrada no válida");
+            Result.setText("Entrada no válida");
         }
-    }//GEN-LAST:event_ObtenerMonomioButtonActionPerformed
+    }//GEN-LAST:event_GetMonomialButtonActionPerformed
 
-    private void EvaluarTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EvaluarTextFieldActionPerformed
+    private void EvaluateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EvaluateTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_EvaluarTextFieldActionPerformed
+    }//GEN-LAST:event_EvaluateTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -297,25 +297,25 @@ public class PolynomialView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CBx1;
-    private javax.swing.JButton EvaluarButton;
-    private javax.swing.JTextField EvaluarTextField;
-    private javax.swing.JTextField GradoTextField;
-    private javax.swing.JButton Multiplicar;
-    private javax.swing.JButton ObtenerMonomioButton;
-    private javax.swing.JTextField PrimerPolinomio;
-    private javax.swing.JRadioButton PrimerPolinomioSelect;
-    private javax.swing.JButton Restar;
-    private javax.swing.JTextField Resultado;
-    private javax.swing.JTextField SegundoPolinomio;
-    private javax.swing.JRadioButton SegundoPolinomioSelect;
-    private javax.swing.JButton Sumar;
+    private javax.swing.JButton EvaluateButton;
+    private javax.swing.JTextField EvaluateTextField;
+    private javax.swing.JTextField FirstPolynomial;
+    private javax.swing.JRadioButton FirstPolynomialSelect;
+    private javax.swing.JButton GetMonomialButton;
+    private javax.swing.JTextField GradeTextField;
+    private javax.swing.JButton InsertButton;
+    private javax.swing.JButton MultiplyButton;
+    private javax.swing.JTextField Result;
+    private javax.swing.JTextField SecondPolynomial;
+    private javax.swing.JRadioButton SecondPolynomialSelect;
+    private javax.swing.JButton SubtractButton;
+    private javax.swing.JButton SumButton;
     private javax.swing.JTextField TxtCoef;
     private javax.swing.JTextField TxtExp;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
