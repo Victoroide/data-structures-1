@@ -1,4 +1,4 @@
-package Negocio;
+package TDA_Polinomios;
 
 public class Monomio {
     private int coef;

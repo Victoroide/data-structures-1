@@ -1,13 +1,13 @@
-package Negocio;
+package TDA_Polinomios;
 
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class Polinomio1 {
+public class Polinomio {
     private Monomio[] p;
     private int dim;
 
-    public Polinomio1(int capacidad) {
+    public Polinomio(int capacidad) {
         p = new Monomio[capacidad];
         dim = -1;
     }
@@ -55,8 +55,8 @@ public class Polinomio1 {
         dim--;
     }
     
-    public Polinomio1 sumar(Polinomio1 otro) {
-        Polinomio1 resultado = new Polinomio1(this.p.length + otro.p.length);
+    public Polinomio sumar(Polinomio otro) {
+        Polinomio resultado = new Polinomio(this.p.length + otro.p.length);
         for (Monomio monomio : this.p) {
             if (monomio != null) {
                 resultado.insertar('+', monomio.getCoef(), monomio.getExp());
@@ -70,8 +70,8 @@ public class Polinomio1 {
         return resultado;
     }
 
-    public Polinomio1 restar(Polinomio1 otro) {
-        Polinomio1 resultado = new Polinomio1(this.p.length + otro.p.length);
+    public Polinomio restar(Polinomio otro) {
+        Polinomio resultado = new Polinomio(this.p.length + otro.p.length);
         for (Monomio monomio : this.p) {
             if (monomio != null) {
                 resultado.insertar('+', monomio.getCoef(), monomio.getExp());
@@ -85,8 +85,8 @@ public class Polinomio1 {
         return resultado;
     }
 
-    public Polinomio1 multiplicar(Polinomio1 otro) {
-        Polinomio1 resultado = new Polinomio1(this.p.length * otro.p.length);
+    public Polinomio multiplicar(Polinomio otro) {
+        Polinomio resultado = new Polinomio(this.p.length * otro.p.length);
         for (Monomio monomioA : this.p) {
             if (monomioA != null) {
                 for (Monomio monomioB : otro.p) {
