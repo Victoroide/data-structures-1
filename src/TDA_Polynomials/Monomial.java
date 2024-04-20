@@ -9,10 +9,10 @@ public class Monomial {
         this.exp = 0;
     }
 
-    public Monomial(char signo, int coef, int exp) {
+    public Monomial(char sign, int coef, int exp) {
         this.coef = coef;
         this.exp = exp;
-        this.setSigno(signo);
+        this.setSign(sign);
     }
 
     public void setCoef(int coef) {
@@ -26,8 +26,8 @@ public class Monomial {
         this.exp = exp;
     }
 
-    public void setSigno(char signo) {
-        if (signo == '-') {
+    public void setSign(char sign) {
+        if (sign == '-') {
             this.coef = -Math.abs(this.coef);
         }
     }
@@ -40,7 +40,7 @@ public class Monomial {
         return exp;
     }
 
-    public void sumar(Monomial m) {
+    public void sum(Monomial m) {
         if (this.exp == m.exp) {
             this.coef += m.coef;
         } else {

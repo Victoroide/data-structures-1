@@ -7,35 +7,35 @@ public class Polynomial {
     private Monomial[] p;
     private int dim;
 
-    public Polynomial(int capacidad) {
-        p = new Monomial[capacidad];
+    public Polynomial(int size) {
+        p = new Monomial[size];
         dim = -1;
     }
 
-    public void insertar(char signo, int coef, int exp) {
+    public void insert(char sign, int coef, int exp) {
         if (coef == 0) return;
-        Monomial nuevo = new Monomial(signo, coef, exp);
-        boolean encontrado = false;
+        Monomial new_obj = new Monomial(sign, coef, exp);
+        boolean found = false;
         for (int i = 0; i <= dim; i++) {
             if (p[i].getExp() == exp) {
-                p[i].sumar(nuevo);
+                p[i].sum(new_obj);
                 if (p[i].getCoef() == 0) {
-                    eliminar(i);
+                    remove(i);
                 }
-                encontrado = true;
+                found = true;
                 break;
             }
         }
-        if (!encontrado) {
+        if (!found) {
             if (dim + 1 == p.length) {
-                redimensionar();
+                resize();
             }
-            p[++dim] = nuevo;
+            p[++dim] = new_obj;
         }
-        ordenarPorExponente();
+        sort_by_exponent();
     }
 
-    private void ordenarPorExponente() {
+    private void sort_by_exponent() {
         Arrays.sort(p, 0, dim + 1, new Comparator<Monomial>() {
             @Override
             public int compare(Monomial m1, Monomial m2) {
@@ -44,80 +44,80 @@ public class Polynomial {
         });
     }
 
-    private void redimensionar() {
+    private void resize() {
         p = Arrays.copyOf(p, p.length + 5);
     }
 
-    private void eliminar(int index) {
+    private void remove(int index) {
         if (index < 0 || index > dim) return;
         System.arraycopy(p, index + 1, p, index, dim - index);
         p[dim] = null;
         dim--;
     }
     
-    public Polynomial sumar(Polynomial otro) {
-        Polynomial resultado = new Polynomial(this.p.length + otro.p.length);
-        for (Monomial monomio : this.p) {
-            if (monomio != null) {
-                resultado.insertar('+', monomio.getCoef(), monomio.getExp());
+    public Polynomial sum(Polynomial other) {
+        Polynomial result = new Polynomial(this.p.length + other.p.length);
+        for (Monomial monomial_obj : this.p) {
+            if (monomial_obj != null) {
+                result.insert('+', monomial_obj.getCoef(), monomial_obj.getExp());
             }
         }
-        for (Monomial monomio : otro.p) {
-            if (monomio != null) {
-                resultado.insertar('+', monomio.getCoef(), monomio.getExp());
+        for (Monomial monomial_obj : other.p) {
+            if (monomial_obj != null) {
+                result.insert('+', monomial_obj.getCoef(), monomial_obj.getExp());
             }
         }
-        return resultado;
+        return result;
     }
 
-    public Polynomial restar(Polynomial otro) {
-        Polynomial resultado = new Polynomial(this.p.length + otro.p.length);
-        for (Monomial monomio : this.p) {
-            if (monomio != null) {
-                resultado.insertar('+', monomio.getCoef(), monomio.getExp());
+    public Polynomial subtract(Polynomial other) {
+        Polynomial result = new Polynomial(this.p.length + other.p.length);
+        for (Monomial monomial_obj : this.p) {
+            if (monomial_obj != null) {
+                result.insert('+', monomial_obj.getCoef(), monomial_obj.getExp());
             }
         }
-        for (Monomial monomio : otro.p) {
-            if (monomio != null) {
-                resultado.insertar('-', monomio.getCoef(), monomio.getExp());
+        for (Monomial monomial_obj : other.p) {
+            if (monomial_obj != null) {
+                result.insert('-', monomial_obj.getCoef(), monomial_obj.getExp());
             }
         }
-        return resultado;
+        return result;
     }
 
-    public Polynomial multiplicar(Polynomial otro) {
-        Polynomial resultado = new Polynomial(this.p.length * otro.p.length);
-        for (Monomial monomioA : this.p) {
-            if (monomioA != null) {
-                for (Monomial monomioB : otro.p) {
-                    if (monomioB != null) {
-                        int nuevoCoef = monomioA.getCoef() * monomioB.getCoef();
-                        int nuevoExp = monomioA.getExp() + monomioB.getExp();
-                        resultado.insertar('+', nuevoCoef, nuevoExp);
+    public Polynomial multiply(Polynomial other) {
+        Polynomial result = new Polynomial(this.p.length * other.p.length);
+        for (Monomial monomial_objA : this.p) {
+            if (monomial_objA != null) {
+                for (Monomial monomial_objB : other.p) {
+                    if (monomial_objB != null) {
+                        int nuevoCoef = monomial_objA.getCoef() * monomial_objB.getCoef();
+                        int nuevoExp = monomial_objA.getExp() + monomial_objB.getExp();
+                        result.insert('+', nuevoCoef, nuevoExp);
                     }
                 }
             }
         }
-        return resultado;
+        return result;
     }
     
     public double evaluar(double x) {
-        double resultado = 0.0;
+        double result = 0.0;
         for (Monomial m : p) {
             if (m != null) {
-                resultado += m.getCoef() * Math.pow(x, m.getExp());
+                result += m.getCoef() * Math.pow(x, m.getExp());
             }
         }
-        return resultado;
+        return result;
     }
 
-    public Monomial obtenerMonomio(int exponente) {
+    public Monomial getMonomial(int exponent) {
         for (Monomial m : p) {
-            if (m != null && m.getExp() == exponente) {
+            if (m != null && m.getExp() == exponent) {
                 return m;
             }
         }
-        return null; // Retorna null si no se encuentra el monomio con el exponente dado.
+        return null; // Retorna null si no se encuentra el monomial_obj con el exponente dado.
     }
 
     @Override

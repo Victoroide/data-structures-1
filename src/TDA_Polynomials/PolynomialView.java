@@ -188,10 +188,10 @@ public class PolynomialView extends javax.swing.JFrame {
         char Sign = sign.charAt(0);
 
         if (FirstPolynomialSelect.isSelected()) {
-            A.insertar(Sign, Coef, Exp);
+            A.insert(Sign, Coef, Exp);
             FirstPolynomial.setText(A.toString());
         } else if (SecondPolynomialSelect.isSelected()) {
-            B.insertar(Sign, Coef, Exp);
+            B.insert(Sign, Coef, Exp);
             SecondPolynomial.setText(B.toString());
         }
     }//GEN-LAST:event_InsertButtonActionPerformed
@@ -213,17 +213,17 @@ public class PolynomialView extends javax.swing.JFrame {
     }//GEN-LAST:event_ResultActionPerformed
 
     private void SumButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SumButtonActionPerformed
-        Polynomial result = A.sumar(B);
+        Polynomial result = A.sum(B);
         Result.setText(result.toString());
     }//GEN-LAST:event_SumButtonActionPerformed
 
     private void SubtractButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubtractButtonActionPerformed
-        Polynomial result = A.restar(B);
+        Polynomial result = A.subtract(B);
         Result.setText(result.toString());
     }//GEN-LAST:event_SubtractButtonActionPerformed
 
     private void MultiplyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MultiplyButtonActionPerformed
-        Polynomial result = A.multiplicar(B);
+        Polynomial result = A.multiply(B);
         Result.setText(result.toString());
     }//GEN-LAST:event_MultiplyButtonActionPerformed
 
@@ -246,7 +246,7 @@ public class PolynomialView extends javax.swing.JFrame {
     private void GetMonomialButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GetMonomialButtonActionPerformed
         try {
             int grade = Integer.parseInt(GradeTextField.getText());
-            Monomial m = (FirstPolynomialSelect.isSelected() ? A : B).obtenerMonomio(grade);
+            Monomial m = (FirstPolynomialSelect.isSelected() ? A : B).getMonomial(grade);
             Result.setText(m != null ? m.toString() : "Monomio no encontrado");
         } catch (NumberFormatException ex) {
             Result.setText("Entrada no válida");
