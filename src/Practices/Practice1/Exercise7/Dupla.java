@@ -9,6 +9,7 @@ package Practices.Practice1.Exercise7;
  *
  * @author cvict
  */
+
 public class Dupla {
     public static void main(String[] args) {
         ApplicationDupla dupla1 = new ApplicationDupla(2, 3);
