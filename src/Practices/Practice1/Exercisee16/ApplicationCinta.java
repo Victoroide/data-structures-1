@@ -34,9 +34,8 @@ public class ApplicationCinta {
         return cinta.charAt(posicion);
     }
 
-    public void reg() {
-        char caracter = cinta.charAt(posicion);
-        System.out.println("Caracter registrado: " + caracter);
+    public String reg() {
+        return String.valueOf(cinta.charAt(posicion));
     }
 
     public void siguientePalabra() {
@@ -71,5 +70,14 @@ public class ApplicationCinta {
     public void imprimir() {
         System.out.println("Cinta: " + cinta);
         System.out.println("Posición del cabezal: " + posicion);
+    }
+
+    @Override
+    public String toString() {
+        return cinta;
+    }
+
+    public int getPosicion() {
+        return posicion;
     }
 }
