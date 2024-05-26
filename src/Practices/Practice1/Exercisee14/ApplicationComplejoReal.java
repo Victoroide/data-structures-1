@@ -36,4 +36,9 @@ public class ApplicationComplejoReal {
         this.parteReal += parteReal;
         this.parteImaginaria += parteImaginaria;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%.2f + %.2fi", parteReal, parteImaginaria);
+    }
 }

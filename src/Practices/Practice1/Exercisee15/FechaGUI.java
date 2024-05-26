@@ -9,7 +9,6 @@ package Practices.Practice1.Exercisee15;
  * @author cvict
  */
 
-// FechaGUI.java
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
