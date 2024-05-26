@@ -64,4 +64,9 @@ public class ApplicationHora {
     private boolean horaValida(int h, int m, int s) {
         return h >= 0 && h < 24 && m >= 0 && m < 60 && s >= 0 && s < 60;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%02d:%02d:%02d", horas, minutos, segundos);
+    }
 }
