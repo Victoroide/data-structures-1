@@ -41,7 +41,7 @@ public class Operators {
         System.out.println("Right Shift: " + rightShiftResult); // Prints: Right Shift: 2
 
         // Unsigned Right Shift Operation
-        int unsignedRightShiftResult = -5 >>> 1; // result depends on internal binary representation
+        int unsignedRightShiftResult = -5 >>> 1; // result: 2147483645 (depends on internal binary representation)
         System.out.println("Unsigned Right Shift: " + unsignedRightShiftResult);
     }
 }
