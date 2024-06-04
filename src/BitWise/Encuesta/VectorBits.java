@@ -82,6 +82,6 @@ public class VectorBits {
     }
     
     public static void main(String[] args) {
-        // Implementación de pruebas si es necesario
+        
     }
 }
