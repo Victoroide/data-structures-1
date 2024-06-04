@@ -12,8 +12,8 @@ import javax.swing.JOptionPane;
 public class InterfazCRB extends javax.swing.JFrame {
       ConjuntoRangoBits A;
       TDABitWise B;
-      int Rinicial;
-      int Rfinal;        
+      int inicioRango;
+      int finRango;        
     /**
      * Creates new form FConjuntoRangoBits
      */
@@ -31,7 +31,6 @@ public class InterfazCRB extends javax.swing.JFrame {
     private void initComponents() {
 
         jTextField1 = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -41,10 +40,10 @@ public class InterfazCRB extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jTextField1.setEditable(false);
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("C =");
+        jTextField1.setText("Conjunto Resultante");
+        jTextField1.setActionCommand("<Not Set>");
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Insertar");
@@ -91,6 +90,7 @@ public class InterfazCRB extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextField1)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
@@ -104,12 +104,7 @@ public class InterfazCRB extends javax.swing.JFrame {
                                 .addComponent(jButton1)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton2))
-                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField1)))
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(68, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -126,9 +121,7 @@ public class InterfazCRB extends javax.swing.JFrame {
                     .addComponent(jButton1)
                     .addComponent(jButton2))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(43, Short.MAX_VALUE))
         );
 
@@ -137,11 +130,17 @@ public class InterfazCRB extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        int RangoInicial=Integer.parseInt(JOptionPane.showInputDialog("Introduzca Rango Inicial: "));
-        int RangoFinal=Integer.parseInt(JOptionPane.showInputDialog("Introduzca Rango Final: "));
-        Rinicial=RangoInicial;
-        Rfinal=RangoFinal;
-        A=new ConjuntoRangoBits(Rinicial, Rfinal);
+        int RangoInicial=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el rango inicial"));
+        int RangoFinal;
+        do{
+            RangoFinal=Integer.parseInt(JOptionPane.showInputDialog("Ingrese el rango final"));
+            if (RangoFinal<RangoInicial) 
+            JOptionPane.showMessageDialog(rootPane, "El rango final no puede ser menor que el inicial, inténtalo con un numero mayor a " + RangoInicial, null, HEIGHT);
+        }while(RangoFinal<RangoInicial);
+        
+        inicioRango=RangoInicial;
+        finRango=RangoFinal;
+        A=new ConjuntoRangoBits(inicioRango, finRango);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -149,12 +148,12 @@ public class InterfazCRB extends javax.swing.JFrame {
         String ele=jTextField2.getText();
         int elemento=Integer.parseInt(ele);
         //-----------------------------
-        if ((elemento>=Rinicial)&&(elemento<=Rfinal)) {
+        if ((elemento>=inicioRango)&&(elemento<=finRango)) {
         A.insertar(Integer.parseInt(ele));       
         jTextField1.setText(A.toString());
         }else
         {
-            JOptionPane.showMessageDialog(rootPane, "Fuera de Rango", null, HEIGHT);
+            JOptionPane.showMessageDialog(rootPane, "Ingrese un elemento dentro del rango!", null, HEIGHT);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -209,7 +208,6 @@ public class InterfazCRB extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JTextField jTextField1;
