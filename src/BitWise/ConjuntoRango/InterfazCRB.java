@@ -7,9 +7,9 @@ package BitWise.ConjuntoRango;
 import javax.swing.JOptionPane;
 /**
  *
- * @author USUARIO
+ * @author cvict
  */
-public class FConjuntoRangoBits extends javax.swing.JFrame {
+public class InterfazCRB extends javax.swing.JFrame {
       ConjuntoRangoBits A;
       TDABitWise B;
       int Rinicial;
@@ -17,7 +17,7 @@ public class FConjuntoRangoBits extends javax.swing.JFrame {
     /**
      * Creates new form FConjuntoRangoBits
      */
-    public FConjuntoRangoBits() {
+    public InterfazCRB() {
         initComponents();
     }
 
@@ -184,21 +184,23 @@ public class FConjuntoRangoBits extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FConjuntoRangoBits.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazCRB.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FConjuntoRangoBits.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazCRB.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FConjuntoRangoBits.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazCRB.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FConjuntoRangoBits.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfazCRB.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FConjuntoRangoBits().setVisible(true);
+                new InterfazCRB().setVisible(true);
             }
         });
     }
