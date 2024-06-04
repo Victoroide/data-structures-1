@@ -9,66 +9,54 @@ package BitWise.ConjuntoRango;
  * @author cvict
  */
 public class TDABitWise {
-    int x;
-    public TDABitWise()
-    {
-        this.x=0;
+    int valor;
+
+    public TDABitWise() {
+        this.valor = 0;
     }
-    public void Setbit1(int pos)
-    {
-        if(pos<=32)
-        {
-            int mask=1;
-            mask=mask<<pos-1;
-            x=x|mask;
+
+    public void establecerBit1(int posicion) {
+        if (posicion <= 32) {
+            int mascara = 1;
+            mascara = mascara << (posicion - 1);
+            valor = valor | mascara;
         }
     }
-    public void SetBit0(int pos)
-    {
-        if (pos<=32) 
-        {
-          int mask=1;
-          mask=mask<<pos-1;
-          mask=~mask;
-          x=x&mask;
+
+    public void establecerBit0(int posicion) {
+        if (posicion <= 32) {
+            int mascara = 1;
+            mascara = mascara << (posicion - 1);
+            mascara = ~mascara;
+            valor = valor & mascara;
         }
     }
-    public int Getbit(int pos)
-    {
-        int mask=1;
-        mask=mask<<pos-1;
-        mask=mask&x;
-        mask=mask>>>pos-1;
-        return(mask);
+
+    public int obtenerBit(int posicion) {
+        int mascara = 1;
+        mascara = mascara << (posicion - 1);
+        mascara = mascara & valor;
+        mascara = mascara >>> (posicion - 1);
+        return mascara;
     }
 
     @Override
     public String toString() {
-        String S="X[";
+        StringBuilder sb = new StringBuilder("Valor[");
         for (int i = 32; i >= 1; i--) {
-            S=S+" "+Getbit(i);
+            sb.append(" ").append(obtenerBit(i));
         }
-        S=S+" ]";
-        return(S);
+        sb.append(" ]");
+        return sb.toString();
     }
-    
-    public String toString2() {
-        String S="[";
-        for (int i = 32; i >= 1; i--) {
-            S=S+" "+Getbit(i);
-        }
-        S=S+" ]";
-        return(S);
-    }
-    public static void main(String[]args)
-    {
-        TDABitWise P=new TDABitWise();
-        System.out.println(P);
-        P.Setbit1(1);
-        P.Setbit1(2);
-        P.Setbit1(3);
-        P.Setbit1(4);
-        System.out.println(P);
+
+    public static void main(String[] args) {
+        TDABitWise array = new TDABitWise();
+        System.out.println(array);
+        array.establecerBit1(1);
+        array.establecerBit1(2);
+        array.establecerBit1(3);
+        array.establecerBit1(4);
+        System.out.println(array);
     }
 }
-

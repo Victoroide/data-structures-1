@@ -10,93 +10,81 @@ package BitWise.ConjuntoRango;
  */
 
 public class ConjuntoRangoBits {
-    TDABitWise C[];
-    int cant;
-    int RangoInicio;
-    int RangoFinal;
+    TDABitWise[] bitwiseArrays;
+    int cantidad;
+    int inicioRango;
+    int finRango;
     
-    public ConjuntoRangoBits(int rangoInicio,int rangoFinal){
-        this.RangoInicio=rangoInicio;
-        this.RangoFinal=rangoFinal;
-        int Nele=RangoFinal-RangoInicio+1;
-        int Nbw=Nele/32;
-        if (Nele%32!=0) {
-            Nbw++;
+    public ConjuntoRangoBits(int inicioRango, int finRango) {
+        this.inicioRango = inicioRango;
+        this.finRango = finRango;
+        int totalElementos = finRango - inicioRango + 1;
+        int numArrays = totalElementos / 32;
+        if (totalElementos % 32 != 0) {
+            numArrays++;
         }
-            this.C=new TDABitWise[Nbw];
-        for (int i = 0; i < Nbw; i++) {
-            C[i]=new TDABitWise();
-            }
-    }
-    private int CalcNbit(int ele)
-    {
-        return(((ele-1)%32)+1);
-    }
-     private int CalcNBW(int ele)
-    {
-        return((ele-1)/32);
-    }
-    public void Insertar(int elemento)
-    {
-         if ((elemento>=RangoInicio)&&(elemento<=RangoFinal)) {
-            int NBW=CalcNBW(elemento-RangoInicio);
-            int Nbit=CalcNbit(elemento-RangoInicio);
-            C[NBW].Setbit1(Nbit);
-        }
-        else
-        {
-            System.out.println("Error::CojuntoBit:Eliminar:Elemento Fuera de Rango");
-            System.exit(1);
+        this.bitwiseArrays = new TDABitWise[numArrays];
+        for (int i = 0; i < numArrays; i++) {
+            bitwiseArrays[i] = new TDABitWise();
         }
     }
-    public boolean Pertenece(int ele)
-    {
-        int NBW=CalcNBW(ele-RangoInicio);
-        int Nbit=CalcNbit(ele-RangoInicio);
-        return(C[NBW].Getbit(Nbit)==1);
+    
+    private int calcularIndiceBit(int elemento) {
+        return ((elemento - 1) % 32) + 1;
     }
-  /*  public void SetCant(int cantidad)
-    {
-        this.cant=cantidad;
-    }
-    public int getCantidad()
-    {
-        return this.cant;
-    }*/
-     public void Eliminar(int ele)
-    {
-        if (ele<=cant) {
-            int NBW=CalcNBW(ele);
-            int Nbit=CalcNbit(ele);
-            C[NBW].SetBit0(Nbit);
-            
-        }
-        else
-        {
-            System.out.println("Error::ConjuntioBit:Eliminar:Elemento fuera de Rango");
-            System.exit(1);
-        }
-    }
-    public String toString() {
-        String S="C={";
-        for (int i = RangoInicio; i <= RangoFinal; i++) {
-            if(Pertenece(i))
-            S=S+i+" , ";
-        }
-        S=S+"}";
-        return S;
-    }
-    public static void main(String[]args)
-    {
-        ConjuntoRangoBits A=new ConjuntoRangoBits(1,10);
-        A.Insertar(1);
-        A.Insertar(2);
-        A.Insertar(3);
-        System.out.println(Integer.toBinaryString(A.CalcNbit(3)));
-        A.Insertar(4);
-        A.Insertar(5);
-        System.out.println(A.toString());
-    }
-     
-}
 
+    private int calcularIndiceArray(int elemento) {
+        return (elemento - 1) / 32;
+    }
+
+    public void insertar(int elemento) {
+        if ((elemento >= inicioRango) && (elemento <= finRango)) {
+            int indiceArray = calcularIndiceArray(elemento - inicioRango);
+            int indiceBit = calcularIndiceBit(elemento - inicioRango);
+            bitwiseArrays[indiceArray].establecerBit1(indiceBit);
+        } else {
+            System.out.println("Error al insertar: Elemento fuera de rango");
+            System.exit(1);
+        }
+    }
+
+    public boolean pertenece(int elemento) {
+        int indiceArray = calcularIndiceArray(elemento - inicioRango);
+        int indiceBit = calcularIndiceBit(elemento - inicioRango);
+        return bitwiseArrays[indiceArray].obtenerBit(indiceBit) == 1;
+    }
+
+    public void eliminar(int elemento) {
+        if (elemento <= cantidad) {
+            int indiceArray = calcularIndiceArray(elemento);
+            int indiceBit = calcularIndiceBit(elemento);
+            bitwiseArrays[indiceArray].establecerBit0(indiceBit);
+        } else {
+            System.out.println("Error al eliminar: Elemento fuera de rango");
+            System.exit(1);
+        }
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("Conjunto={");
+        for (int i = inicioRango; i <= finRango; i++) {
+            if (pertenece(i)) {
+                sb.append(i).append(" , ");
+            }
+        }
+        sb.append("}");
+        return sb.toString();
+    }
+
+    public static void main(String[] args) {
+        ConjuntoRangoBits conjunto = new ConjuntoRangoBits(1, 10);
+        conjunto.insertar(1);
+        conjunto.insertar(2);
+        conjunto.insertar(3);
+        System.out.println(Integer.toBinaryString(conjunto.calcularIndiceBit(3)));
+        conjunto.insertar(4);
+        conjunto.insertar(5);
+        System.out.println(conjunto.toString());
+    }
+}
