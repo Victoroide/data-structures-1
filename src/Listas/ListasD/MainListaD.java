@@ -11,7 +11,7 @@ import Listas.ListasD.ListaD;
  *
  * @author Victor
  */
-public class ListaD1 {
+public class MainListaD {
 
     /**
      * @param args the command line arguments
