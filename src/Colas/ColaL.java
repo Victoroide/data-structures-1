@@ -65,4 +65,39 @@ public class ColaL {
         }
         return S;
     }
+
+    // Recursividad
+    public void invertirColaRecursiva() {
+        if (!this.Vacia()) {
+            int elemento = this.Decolar();
+            this.invertirColaRecursiva();
+            this.Encolar(elemento);
+        }
+    }
+    
+    // Método para invertir la cola de forma iterativa
+    public void invertirColaIterativa() {
+        if (this.Vacia()) return;
+
+        ColaL auxiliar = new ColaL();
+
+        while (!this.Vacia()) {
+            auxiliar.Encolar(this.Decolar());
+        }
+
+        while (!auxiliar.Vacia()) {
+            int valor = auxiliar.Decolar();
+            Nodo nuevoNodo = new Nodo();
+            nuevoNodo.setDato(valor);
+
+            if (this.Vacia()) {
+                this.Frente = nuevoNodo;
+                this.Atras = nuevoNodo;
+            } else {
+                nuevoNodo.setEnlace(this.Frente);
+                this.Frente = nuevoNodo;
+            }
+            this.cant++;
+        }
+    }
 }

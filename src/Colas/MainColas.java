@@ -64,9 +64,12 @@ public class MainColas {
         Q.Encolar(18);
         Q.Encolar(31);
         Q.Encolar(7);
-        System.out.println(Q);
-        Q.Decolar();
-        Q.Decolar();
-        System.out.println(Q);
+        //System.out.println(Q);
+        //Q.Decolar();
+        //Q.Decolar();
+        //System.out.println(Q);
+        System.out.println("Cola original: " + Q);
+        Q.invertirColaIterativa();
+        System.out.println("Cola invertida: " + Q);
     }
 }
