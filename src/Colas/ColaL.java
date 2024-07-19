@@ -100,4 +100,50 @@ public class ColaL {
             this.cant++;
         }
     }
+    
+    // Método para eliminar elementos repetidos de la cola sin estructuras auxiliares
+    public void eliminarRepetidos() {
+        if (this.Vacia()) return;
+
+        Nodo actual = this.Frente;
+
+        while (actual != null) {
+            Nodo anterior = actual;
+            Nodo siguiente = actual.getEnlace();
+
+            while (siguiente != null) {
+                if (actual.getDato() == siguiente.getDato()) {
+                    anterior.setEnlace(siguiente.getEnlace());
+                    this.cant--;
+                } else {
+                    anterior = siguiente;
+                }
+                siguiente = siguiente.getEnlace();
+            }
+
+            actual = actual.getEnlace();
+        }
+
+        this.Atras = this.Frente;
+        while (this.Atras != null && this.Atras.getEnlace() != null) {
+            this.Atras = this.Atras.getEnlace();
+        }
+    }
+    
+    public static void main(String[] args) {
+        ColaL cola = new ColaL();
+        cola.Encolar(1);
+        cola.Encolar(2);
+        cola.Encolar(2);
+        cola.Encolar(3);
+        cola.Encolar(4);
+        cola.Encolar(4);
+        cola.Encolar(5);
+
+        System.out.println("Cola original: " + cola);
+
+        cola.eliminarRepetidos();
+
+        System.out.println("Cola sin repetidos: " + cola);
+    }
 }
