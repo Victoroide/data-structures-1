@@ -97,21 +97,68 @@ public class ColaV {
         }
     }
 
+    // Método para intercambiar contenido entre dos colas
+    public void intercambiarColas(ColaV otraCola) {
+        int maxSize = Math.max(this.C.length, otraCola.C.length);
+        ColaV temp = new ColaV(maxSize);
+
+        while (!this.vacia()) {
+            temp.Encolar(this.Decolar());
+        }
+
+        while (!otraCola.vacia()) {
+            this.Encolar(otraCola.Decolar());
+        }
+
+        while (!temp.vacia()) {
+            otraCola.Encolar(temp.Decolar());
+        }
+    }
+    
+    public void intercambiarColas2(ColaV otraCola) {
+        int[] tempArray = new int[this.C.length];
+       
+        // Vaciar la primera cola en el array temporal
+        int index = 0;
+        while (!this.vacia()) {
+            tempArray[index++] = this.Decolar();
+        }
+
+        // Vaciar la segunda cola en la primera cola
+        while (!otraCola.vacia()) {
+            this.Encolar(otraCola.Decolar());
+        }
+
+        // Llenar la segunda cola con los elementos del array temporal
+        for (int i = 0; i < index; i++) {
+            otraCola.Encolar(tempArray[i]);
+        }
+    }
+
     public static void main(String[] args) {
-        ColaV cola = new ColaV(10);
-        cola.Encolar(1);
-        cola.Encolar(2);
-        cola.Encolar(2);
-        cola.Encolar(3);
-        cola.Encolar(4);
-        cola.Encolar(4);
-        cola.Encolar(5);
+        ColaV q1 = new ColaV(10);
+        ColaV q2 = new ColaV(10);
 
-        System.out.println("Cola original: " + cola);
+        q1.Encolar(1);
+        q1.Encolar(2);
+        q1.Encolar(3);
+        q1.Encolar(4);
+        q1.Encolar(5);
 
-        cola.eliminarRepetidos();
+        q2.Encolar(6);
+        q2.Encolar(7);
+        q2.Encolar(8);
+        q2.Encolar(9);
+        q2.Encolar(10);
+        q2.Encolar(11);
 
-        System.out.println("Cola sin repetidos: " + cola);
+        System.out.println("Q1 original: " + q1);
+        System.out.println("Q2 original: " + q2);
+
+        q1.intercambiarColas2(q2);
+
+        System.out.println("Q1 después del intercambio: " + q1);
+        System.out.println("Q2 después del intercambio: " + q2);
     }
     
 }

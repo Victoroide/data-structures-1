@@ -101,7 +101,6 @@ public class ColaL {
         }
     }
     
-    // Método para eliminar elementos repetidos de la cola sin estructuras auxiliares
     public void eliminarRepetidos() {
         if (this.Vacia()) return;
 
