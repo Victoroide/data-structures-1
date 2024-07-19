@@ -6,7 +6,7 @@ This repository is designed as a comprehensive resource to support students and 
 
 - **Institution:** Faculty of Computer Science and Telecommunications (FICCT), UAGRM
 - **Course:** Data Structures I
-- **Professor:** Ing. Campos
+- **Professor:** Engineer Mario Campos
 - **Semester:** 4
 
 ## Development Environment
@@ -14,8 +14,13 @@ This repository is designed as a comprehensive resource to support students and 
 This repository's projects are developed with:
 - **IDE:** NetBeans 8.2
 - **Java Version:** JDK 8 (Java 1.8)
+> You can download both at the same time here: [NetBeans 8.2 + JDK 8 (Mediafire)](https://www.mediafire.com/file/1qntoo71xp1x4gq/netbeans_8.2_%252B_jdk-8u111_-_windows-x64.exe/file)
 
-You can download both at the same time here: [NetBeans 8.2 + JDK 8 (Mediafire)](https://www.mediafire.com/file/1qntoo71xp1x4gq/netbeans_8.2_%252B_jdk-8u111_-_windows-x64.exe/file)
+If you wanna use the dark mode there are the instructions:
+- Download [Dracula Theme for NetBeans](https://drive.google.com/file/d/1589tMWr7rUJtQ92bOJNcapWeiOApk31i/edit)
+- Go to Tools > Plugins > Downloaded > Add Plugins
+- Select the `1501524971_nb-darcula-1.6.nbm` and install
+- Reload NetBeans IDE
 
 ## Repository Structure
 
