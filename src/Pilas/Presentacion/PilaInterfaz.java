@@ -9,14 +9,14 @@ import Pilas.Negocio.PilaV;
 
 /**
  *
- * @author sebas
+ * @author Victor
  */
 public class PilaInterfaz extends javax.swing.JFrame {
 
     /**
      * Creates new form PilaInterfaz
      */
-    PilaV p;
+    PilaV pila;
     public PilaInterfaz() {
         initComponents();
     }
@@ -31,19 +31,19 @@ public class PilaInterfaz extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        btnCrearP = new javax.swing.JButton();
+        CrearPila = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        txtElemento = new javax.swing.JTextField();
-        btnPush = new javax.swing.JButton();
-        btnPop = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        Elemento = new javax.swing.JTextField();
+        PushButton = new javax.swing.JButton();
+        PopButton = new javax.swing.JButton();
+        CambiarExtremos = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        txtLongitud = new javax.swing.JTextField();
+        TamañoPila = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtPila = new javax.swing.JTextArea();
+        PilaInicial = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        txtResultado = new javax.swing.JTextArea();
+        PilaResultado = new javax.swing.JTextArea();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,38 +51,38 @@ public class PilaInterfaz extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel2.setText("Pila Interfaz");
 
-        btnCrearP.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnCrearP.setText("CrearPila");
-        btnCrearP.addActionListener(new java.awt.event.ActionListener() {
+        CrearPila.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        CrearPila.setText("Crear Pila");
+        CrearPila.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCrearPActionPerformed(evt);
+                CrearPilaActionPerformed(evt);
             }
         });
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel3.setText("Elemento:");
 
-        btnPush.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnPush.setText("Push");
-        btnPush.addActionListener(new java.awt.event.ActionListener() {
+        PushButton.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        PushButton.setText("Push");
+        PushButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPushActionPerformed(evt);
+                PushButtonActionPerformed(evt);
             }
         });
 
-        btnPop.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnPop.setText("Pop");
-        btnPop.addActionListener(new java.awt.event.ActionListener() {
+        PopButton.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        PopButton.setText("Pop");
+        PopButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPopActionPerformed(evt);
+                PopButtonActionPerformed(evt);
             }
         });
 
-        jButton1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jButton1.setText("Cambiar Extremos");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        CambiarExtremos.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        CambiarExtremos.setText("Cambiar Extremos");
+        CambiarExtremos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                CambiarExtremosActionPerformed(evt);
             }
         });
 
@@ -92,16 +92,16 @@ public class PilaInterfaz extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel6.setText("Pila final:");
 
-        txtPila.setColumns(20);
-        txtPila.setLineWrap(true);
-        txtPila.setRows(5);
-        txtPila.setText("\n");
-        jScrollPane1.setViewportView(txtPila);
+        PilaInicial.setColumns(20);
+        PilaInicial.setLineWrap(true);
+        PilaInicial.setRows(5);
+        PilaInicial.setText("\n");
+        jScrollPane1.setViewportView(PilaInicial);
 
-        txtResultado.setColumns(20);
-        txtResultado.setLineWrap(true);
-        txtResultado.setRows(5);
-        jScrollPane2.setViewportView(txtResultado);
+        PilaResultado.setColumns(20);
+        PilaResultado.setLineWrap(true);
+        PilaResultado.setRows(5);
+        jScrollPane2.setViewportView(PilaResultado);
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel1.setText("Pila inicial:");
@@ -114,22 +114,22 @@ public class PilaInterfaz extends javax.swing.JFrame {
                 .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnCrearP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(CrearPila, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel5)
                                 .addComponent(jLabel2))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtLongitud, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
-                        .addComponent(txtElemento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(TamañoPila, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE))
+                        .addComponent(Elemento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel3)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnPush)
+                                .addComponent(PushButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnPop))
-                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))))
+                                .addComponent(PopButton))
+                            .addComponent(CambiarExtremos, javax.swing.GroupLayout.Alignment.TRAILING))))
                 .addGap(63, 63, 63)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
@@ -148,23 +148,23 @@ public class PilaInterfaz extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(txtLongitud, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TamañoPila, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnCrearP)
+                        .addComponent(CrearPila)
                         .addGap(48, 48, 48)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(txtElemento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Elemento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnPop)
-                            .addComponent(btnPush))
+                            .addComponent(PopButton)
+                            .addComponent(PushButton))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1))
+                        .addComponent(CambiarExtremos))
                     .addComponent(jScrollPane1)
                     .addComponent(jScrollPane2))
                 .addContainerGap(22, Short.MAX_VALUE))
@@ -174,29 +174,30 @@ public class PilaInterfaz extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCrearPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearPActionPerformed
-        int longitud = Integer.parseInt(txtLongitud.getText());
+    private void CrearPilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearPilaActionPerformed
+        int longitud = Integer.parseInt(TamañoPila.getText());
         if(longitud > 0){
-            p = new PilaV(longitud);
-            txtPila.setText(p.toString());
+            pila = new PilaV(longitud);
+            PilaInicial.setText(pila.toString());
         }
-    }//GEN-LAST:event_btnCrearPActionPerformed
+    }//GEN-LAST:event_CrearPilaActionPerformed
 
-    private void btnPushActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPushActionPerformed
-        int elemento = Integer.parseInt(txtElemento.getText());
-        p.push(elemento);
-        txtPila.setText(p.toString());
-    }//GEN-LAST:event_btnPushActionPerformed
+    private void PushButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PushButtonActionPerformed
+        int elemento = Integer.parseInt(Elemento.getText());
+        pila.push(elemento);
+        PilaInicial.setText(pila.toString());
+    }//GEN-LAST:event_PushButtonActionPerformed
 
-    private void btnPopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPopActionPerformed
-        p.pop();
-        txtPila.setText(p.toString());
-    }//GEN-LAST:event_btnPopActionPerformed
+    private void PopButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PopButtonActionPerformed
+        pila.pop();
+        PilaInicial.setText(pila.toString());
+    }//GEN-LAST:event_PopButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        p.intercambioExtremos();
-        txtResultado.setText(p.toString());
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void CambiarExtremosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CambiarExtremosActionPerformed
+        pila.intercambioExtremos();
+        PilaResultado.setText(pila.toString());
+
+    }//GEN-LAST:event_CambiarExtremosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -235,10 +236,14 @@ public class PilaInterfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCrearP;
-    private javax.swing.JButton btnPop;
-    private javax.swing.JButton btnPush;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton CambiarExtremos;
+    private javax.swing.JButton CrearPila;
+    private javax.swing.JTextField Elemento;
+    private javax.swing.JTextArea PilaInicial;
+    private javax.swing.JTextArea PilaResultado;
+    private javax.swing.JButton PopButton;
+    private javax.swing.JButton PushButton;
+    private javax.swing.JTextField TamañoPila;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -246,9 +251,5 @@ public class PilaInterfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField txtElemento;
-    private javax.swing.JTextField txtLongitud;
-    private javax.swing.JTextArea txtPila;
-    private javax.swing.JTextArea txtResultado;
     // End of variables declaration//GEN-END:variables
 }

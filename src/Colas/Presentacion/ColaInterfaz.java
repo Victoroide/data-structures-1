@@ -9,14 +9,14 @@ import Colas.Negocio.ColaL;
 
 /**
  *
- * @author sebas
+ * @author Victor
  */
 public class ColaInterfaz extends javax.swing.JFrame {
 
     /**
      * Creates new form FPila
      */
-    ColaL q;
+    ColaL colaInicial;
     public ColaInterfaz() {
         initComponents();
     }
@@ -31,19 +31,19 @@ public class ColaInterfaz extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        btnCrearC = new javax.swing.JButton();
+        CrearCola = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        txtElemento = new javax.swing.JTextField();
-        btnEncolar = new javax.swing.JButton();
-        btnDecolar = new javax.swing.JButton();
-        btnInvertir = new javax.swing.JButton();
+        Elemento = new javax.swing.JTextField();
+        EncolarButton = new javax.swing.JButton();
+        DecolarButton = new javax.swing.JButton();
+        InvertirButton = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        txtLongitud = new javax.swing.JTextField();
+        TamañoCola = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        txtCola = new javax.swing.JTextArea();
+        ColaInicial = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        txtResultado = new javax.swing.JTextArea();
+        ColaResultado = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,63 +51,63 @@ public class ColaInterfaz extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         jLabel2.setText("Cola Interfaz");
 
-        btnCrearC.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnCrearC.setText("CrearCola");
-        btnCrearC.addActionListener(new java.awt.event.ActionListener() {
+        CrearCola.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        CrearCola.setText("Crear Cola");
+        CrearCola.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCrearCActionPerformed(evt);
+                CrearColaActionPerformed(evt);
             }
         });
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel3.setText("Elemento:");
 
-        txtElemento.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        Elemento.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
 
-        btnEncolar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnEncolar.setText("Encolar");
-        btnEncolar.addActionListener(new java.awt.event.ActionListener() {
+        EncolarButton.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        EncolarButton.setText("Encolar");
+        EncolarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEncolarActionPerformed(evt);
+                EncolarButtonActionPerformed(evt);
             }
         });
 
-        btnDecolar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnDecolar.setText("Decolar");
-        btnDecolar.addActionListener(new java.awt.event.ActionListener() {
+        DecolarButton.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        DecolarButton.setText("Decolar");
+        DecolarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDecolarActionPerformed(evt);
+                DecolarButtonActionPerformed(evt);
             }
         });
 
-        btnInvertir.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnInvertir.setText("Invertir");
-        btnInvertir.addActionListener(new java.awt.event.ActionListener() {
+        InvertirButton.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        InvertirButton.setText("Invertir");
+        InvertirButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInvertirActionPerformed(evt);
+                InvertirButtonActionPerformed(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel5.setText("Tamaño de la cola:");
 
-        txtLongitud.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        TamañoCola.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel6.setText("Cola resultante:");
 
-        txtCola.setColumns(20);
-        txtCola.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        txtCola.setLineWrap(true);
-        txtCola.setRows(5);
-        txtCola.setText("\n");
-        jScrollPane1.setViewportView(txtCola);
+        ColaInicial.setColumns(20);
+        ColaInicial.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        ColaInicial.setLineWrap(true);
+        ColaInicial.setRows(5);
+        ColaInicial.setText("\n");
+        jScrollPane1.setViewportView(ColaInicial);
 
-        txtResultado.setColumns(20);
-        txtResultado.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        txtResultado.setLineWrap(true);
-        txtResultado.setRows(5);
-        jScrollPane2.setViewportView(txtResultado);
+        ColaResultado.setColumns(20);
+        ColaResultado.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        ColaResultado.setLineWrap(true);
+        ColaResultado.setRows(5);
+        jScrollPane2.setViewportView(ColaResultado);
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel4.setText("Cola:");
@@ -134,9 +134,9 @@ public class ColaInterfaz extends javax.swing.JFrame {
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel5)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtLongitud, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(btnInvertir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnCrearC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addComponent(TamañoCola, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(InvertirButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(CrearCola, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3)
@@ -144,11 +144,11 @@ public class ColaInterfaz extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(txtElemento)
+                                        .addComponent(Elemento)
                                         .addGap(49, 49, 49)
-                                        .addComponent(btnEncolar)
+                                        .addComponent(EncolarButton)
                                         .addGap(27, 27, 27)
-                                        .addComponent(btnDecolar))
+                                        .addComponent(DecolarButton))
                                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap(12, Short.MAX_VALUE))))
         );
@@ -160,7 +160,7 @@ public class ColaInterfaz extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtLongitud, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                        .addComponent(TamañoCola, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                         .addComponent(jLabel4))
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
@@ -168,12 +168,12 @@ public class ColaInterfaz extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel3)
-                        .addComponent(btnEncolar)
-                        .addComponent(btnDecolar)
-                        .addComponent(txtElemento, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnCrearC))
+                        .addComponent(EncolarButton)
+                        .addComponent(DecolarButton)
+                        .addComponent(Elemento, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CrearCola))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnInvertir)
+                .addComponent(InvertirButton)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -185,29 +185,29 @@ public class ColaInterfaz extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCrearCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearCActionPerformed
+    private void CrearColaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearColaActionPerformed
         //int longitud = Integer.parseInt(txtLongitud.getText());
         //if(longitud > 0){
-            q = new ColaL();
-            txtCola.setText(q.toString());
+            colaInicial = new ColaL();
+            ColaInicial.setText(colaInicial.toString());
         //}
-    }//GEN-LAST:event_btnCrearCActionPerformed
+    }//GEN-LAST:event_CrearColaActionPerformed
 
-    private void btnEncolarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncolarActionPerformed
-        int elemento = Integer.parseInt(txtElemento.getText());
-        q.Encolar(elemento);
-        txtCola.setText(q.toString());
-    }//GEN-LAST:event_btnEncolarActionPerformed
+    private void EncolarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EncolarButtonActionPerformed
+        int elemento = Integer.parseInt(Elemento.getText());
+        colaInicial.Encolar(elemento);
+        ColaInicial.setText(colaInicial.toString());
+    }//GEN-LAST:event_EncolarButtonActionPerformed
 
-    private void btnDecolarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDecolarActionPerformed
-        q.Decolar();
-        txtCola.setText(q.toString());
-    }//GEN-LAST:event_btnDecolarActionPerformed
+    private void DecolarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DecolarButtonActionPerformed
+        colaInicial.Decolar();
+        ColaInicial.setText(colaInicial.toString());
+    }//GEN-LAST:event_DecolarButtonActionPerformed
 
-    private void btnInvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInvertirActionPerformed
-        q.invertirColaRecursiva();
-        txtResultado.setText(q.toString());
-    }//GEN-LAST:event_btnInvertirActionPerformed
+    private void InvertirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InvertirButtonActionPerformed
+        colaInicial.invertirColaRecursiva();
+        ColaResultado.setText(colaInicial.toString());
+    }//GEN-LAST:event_InvertirButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -252,10 +252,14 @@ public class ColaInterfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCrearC;
-    private javax.swing.JButton btnDecolar;
-    private javax.swing.JButton btnEncolar;
-    private javax.swing.JButton btnInvertir;
+    private javax.swing.JTextArea ColaInicial;
+    private javax.swing.JTextArea ColaResultado;
+    private javax.swing.JButton CrearCola;
+    private javax.swing.JButton DecolarButton;
+    private javax.swing.JTextField Elemento;
+    private javax.swing.JButton EncolarButton;
+    private javax.swing.JButton InvertirButton;
+    private javax.swing.JTextField TamañoCola;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -263,9 +267,5 @@ public class ColaInterfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea txtCola;
-    private javax.swing.JTextField txtElemento;
-    private javax.swing.JTextField txtLongitud;
-    private javax.swing.JTextArea txtResultado;
     // End of variables declaration//GEN-END:variables
 }

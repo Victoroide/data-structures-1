@@ -43,10 +43,10 @@
                                   <Group type="102" attributes="0">
                                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtLongitud" min="-2" pref="55" max="-2" attributes="0"/>
+                                      <Component id="TamañoCola" min="-2" pref="55" max="-2" attributes="0"/>
                                   </Group>
-                                  <Component id="btnInvertir" max="32767" attributes="0"/>
-                                  <Component id="btnCrearC" max="32767" attributes="0"/>
+                                  <Component id="InvertirButton" max="32767" attributes="0"/>
+                                  <Component id="CrearCola" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace pref="13" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -56,11 +56,11 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
-                                      <Component id="txtElemento" max="32767" attributes="0"/>
+                                      <Component id="Elemento" max="32767" attributes="0"/>
                                       <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                                      <Component id="btnEncolar" min="-2" max="-2" attributes="0"/>
+                                      <Component id="EncolarButton" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                      <Component id="btnDecolar" min="-2" max="-2" attributes="0"/>
+                                      <Component id="DecolarButton" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jScrollPane1" min="-2" pref="341" max="-2" attributes="0"/>
                               </Group>
@@ -80,7 +80,7 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="txtLongitud" alignment="3" pref="30" max="32767" attributes="0"/>
+                      <Component id="TamañoCola" alignment="3" pref="30" max="32767" attributes="0"/>
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="jLabel5" alignment="0" max="32767" attributes="0"/>
@@ -90,14 +90,14 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnEncolar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnDecolar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtElemento" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="EncolarButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="DecolarButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Elemento" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="btnCrearC" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="CrearCola" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="btnInvertir" min="-2" max="-2" attributes="0"/>
+              <Component id="InvertirButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jLabel6" max="32767" attributes="0"/>
@@ -117,15 +117,15 @@
         <Property name="text" type="java.lang.String" value="Cola Interfaz"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnCrearC">
+    <Component class="javax.swing.JButton" name="CrearCola">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="14" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="CrearCola"/>
+        <Property name="text" type="java.lang.String" value="Crear Cola"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCrearCActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CrearColaActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
@@ -136,14 +136,14 @@
         <Property name="text" type="java.lang.String" value="Elemento:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtElemento">
+    <Component class="javax.swing.JTextField" name="Elemento">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="16" style="0"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnEncolar">
+    <Component class="javax.swing.JButton" name="EncolarButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="14" style="1"/>
@@ -151,10 +151,10 @@
         <Property name="text" type="java.lang.String" value="Encolar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEncolarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EncolarButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnDecolar">
+    <Component class="javax.swing.JButton" name="DecolarButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="14" style="1"/>
@@ -162,10 +162,10 @@
         <Property name="text" type="java.lang.String" value="Decolar"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDecolarActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DecolarButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnInvertir">
+    <Component class="javax.swing.JButton" name="InvertirButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="14" style="1"/>
@@ -173,7 +173,7 @@
         <Property name="text" type="java.lang.String" value="Invertir"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInvertirActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="InvertirButtonActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
@@ -184,7 +184,7 @@
         <Property name="text" type="java.lang.String" value="Tama&#xf1;o de la cola:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="txtLongitud">
+    <Component class="javax.swing.JTextField" name="Tama&#xf1;oCola">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Dialog" size="16" style="0"/>
@@ -206,7 +206,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="txtCola">
+        <Component class="javax.swing.JTextArea" name="ColaInicial">
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -226,7 +226,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextArea" name="txtResultado">
+        <Component class="javax.swing.JTextArea" name="ColaResultado">
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">

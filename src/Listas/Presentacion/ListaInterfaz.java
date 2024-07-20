@@ -9,11 +9,11 @@ import Listas.Negocio.ListasS.Lista;
 
 /**
  *
- * @author sebas
+ * @author Victor
  */
 public class ListaInterfaz extends javax.swing.JFrame {
 
-    Lista l = new Lista();
+    Lista lista = new Lista();
     public ListaInterfaz() {
         initComponents();
     }
@@ -29,12 +29,12 @@ public class ListaInterfaz extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        txtElemento = new javax.swing.JTextField();
-        btnInsertar = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
-        txtResultado = new javax.swing.JTextField();
+        Elemento = new javax.swing.JTextField();
+        InsertarButton = new javax.swing.JButton();
+        EliminarButton = new javax.swing.JButton();
+        Resultado = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        btnInvertir = new javax.swing.JButton();
+        InvertirButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,39 +44,39 @@ public class ListaInterfaz extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel2.setText("Elemento:");
 
-        txtElemento.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
-        txtElemento.addActionListener(new java.awt.event.ActionListener() {
+        Elemento.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        Elemento.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtElementoActionPerformed(evt);
+                ElementoActionPerformed(evt);
             }
         });
 
-        btnInsertar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnInsertar.setText("Insertar");
-        btnInsertar.addActionListener(new java.awt.event.ActionListener() {
+        InsertarButton.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        InsertarButton.setText("Insertar");
+        InsertarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInsertarActionPerformed(evt);
+                InsertarButtonActionPerformed(evt);
             }
         });
 
-        btnEliminar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnEliminar.setText("Eliminar");
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+        EliminarButton.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        EliminarButton.setText("Eliminar");
+        EliminarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
+                EliminarButtonActionPerformed(evt);
             }
         });
 
-        txtResultado.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
+        Resultado.setFont(new java.awt.Font("Dialog", 0, 16)); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 16)); // NOI18N
         jLabel3.setText("Lista:");
 
-        btnInvertir.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        btnInvertir.setText("Invertir");
-        btnInvertir.addActionListener(new java.awt.event.ActionListener() {
+        InvertirButton.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        InvertirButton.setText("Invertir");
+        InvertirButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInvertirActionPerformed(evt);
+                InvertirButtonActionPerformed(evt);
             }
         });
 
@@ -98,14 +98,14 @@ public class ListaInterfaz extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(txtElemento, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Elemento, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(49, 49, 49)
-                                .addComponent(btnInsertar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(InsertarButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnEliminar)
+                                .addComponent(EliminarButton)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnInvertir))
-                            .addComponent(txtResultado))))
+                                .addComponent(InvertirButton))
+                            .addComponent(Resultado))))
                 .addContainerGap(52, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -116,13 +116,13 @@ public class ListaInterfaz extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtElemento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnInsertar)
-                    .addComponent(btnEliminar)
-                    .addComponent(btnInvertir))
+                    .addComponent(Elemento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(InsertarButton)
+                    .addComponent(EliminarButton)
+                    .addComponent(InvertirButton))
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Resultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addContainerGap(42, Short.MAX_VALUE))
         );
@@ -131,26 +131,26 @@ public class ListaInterfaz extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtElementoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtElementoActionPerformed
+    private void ElementoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ElementoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtElementoActionPerformed
+    }//GEN-LAST:event_ElementoActionPerformed
 
-    private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
-        l.insertar(Integer.parseInt(txtElemento.getText()));
-        txtResultado.setText(l.toString());
-        txtElemento.setText("");
-    }//GEN-LAST:event_btnInsertarActionPerformed
+    private void InsertarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InsertarButtonActionPerformed
+        lista.insertar(Integer.parseInt(Elemento.getText()));
+        Resultado.setText(lista.toString());
+        Elemento.setText("");
+    }//GEN-LAST:event_InsertarButtonActionPerformed
 
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        l.Eliminar(Integer.parseInt(txtElemento.getText()));
-        txtResultado.setText(l.toString());
-        txtElemento.setText("");
-    }//GEN-LAST:event_btnEliminarActionPerformed
+    private void EliminarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarButtonActionPerformed
+        lista.Eliminar(Integer.parseInt(Elemento.getText()));
+        Resultado.setText(lista.toString());
+        Elemento.setText("");
+    }//GEN-LAST:event_EliminarButtonActionPerformed
 
-    private void btnInvertirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInvertirActionPerformed
-        l.Invertir();
-        txtResultado.setText(l.toString());
-    }//GEN-LAST:event_btnInvertirActionPerformed
+    private void InvertirButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InvertirButtonActionPerformed
+        lista.Invertir();
+        Resultado.setText(lista.toString());
+    }//GEN-LAST:event_InvertirButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,13 +189,13 @@ public class ListaInterfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnInsertar;
-    private javax.swing.JButton btnInvertir;
+    private javax.swing.JTextField Elemento;
+    private javax.swing.JButton EliminarButton;
+    private javax.swing.JButton InsertarButton;
+    private javax.swing.JButton InvertirButton;
+    private javax.swing.JTextField Resultado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField txtElemento;
-    private javax.swing.JTextField txtResultado;
     // End of variables declaration//GEN-END:variables
 }
