@@ -46,6 +46,37 @@ public class PilaL {
         s = s + "p";
         return s;
     }
-            
+    
+    public void invertir() {
+        if (!vacia()) {
+            Nodo prev = null;
+            Nodo current = cima;
+            Nodo next;
+            while (current != null) {
+                next = current.getEnlace();
+                current.setEnlace(prev);
+                prev = current;
+                current = next;
+            }
+            cima = prev;
+        }
+    }
+    
+    public static void main(String[] args) {
+        PilaL pila = new PilaL();
+        pila.push(1);
+        pila.push(2);
+        pila.push(3);
+        pila.push(4);
+        pila.push(5);
+        
+        System.out.println("Pila original:");
+        System.out.println(pila);
+        
+        pila.invertir();
+        
+        System.out.println("Pila invertida:");
+        System.out.println(pila);
+    }
     
 }

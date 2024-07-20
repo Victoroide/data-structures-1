@@ -151,8 +151,6 @@ public class PilaV {
         while (!aux.vacia()) {
             this.push(aux.pop());
         }
-        
-
         otra.invertir();
         
     }
@@ -169,6 +167,21 @@ public class PilaV {
         return (x);
     }
     
+    public void invertir2() {
+        int[] temp = new int[cima + 1];
+        int index = 0;
+        
+        // Vaciar la pila en el arreglo temporal
+        while (!vacia()) {
+            temp[index++] = pop();
+        }
+        
+        // Rellenar la pila con los elementos del arreglo temporal en orden inverso
+        for (int i = 0; i < index; i++) {
+            push(temp[i]);
+        }
+    }
+    
     @Override
     public String toString(){
         String cad = "[cima]\n";
@@ -180,6 +193,20 @@ public class PilaV {
         return cad;
     }
     
-    
-    
+    public static void main(String[] args) {
+        PilaV pila = new PilaV(10);
+        pila.push(1);
+        pila.push(2);
+        pila.push(3);
+        pila.push(4);
+        pila.push(5);
+        
+        System.out.println("Pila original:");
+        System.out.println(pila);
+        
+        pila.invertir2();
+        
+        System.out.println("Pila invertida:");
+        System.out.println(pila);
+    }
 }
