@@ -57,13 +57,20 @@ public class ColaL {
 
     @Override
     public String toString() {
-        String S = "C->";
+        if (Vacia()) {
+            return "C→";
+        }
+
+        StringBuilder S = new StringBuilder("C→");
         Nodo aux = Frente;
         while (aux != null) {
-            S = S + aux.getDato() + " -> ";
+            S.append(aux.getDato());
             aux = aux.getEnlace();
+            if (aux != null) {
+                S.append(" → ");
+            }
         }
-        return S;
+        return S.toString();
     }
 
     // Recursividad

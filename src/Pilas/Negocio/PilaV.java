@@ -184,13 +184,13 @@ public class PilaV {
     
     @Override
     public String toString(){
-        String cad = "[cima]\n";
-        if(! vacia()){
-            for(int i=cima; i>=0; i--){
-                cad = cad + "[" + p[i] + "]\n";
+        StringBuilder cad = new StringBuilder("[cima]\n");
+        if(!vacia()){
+            for(int i = cima; i >= 0; i--){
+                cad.append("[").append(p[i]).append("]\n");
             }
         }
-        return cad;
+        return cad.toString();
     }
     
     public static void main(String[] args) {

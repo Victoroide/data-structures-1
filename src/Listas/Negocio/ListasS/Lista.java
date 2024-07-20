@@ -97,15 +97,23 @@ public class Lista {
 
     @Override
     public String toString() {
-        String S = "L-> < ";
+        if (vacia()) {
+            return "L→ < >";
+        }
+
+        StringBuilder S = new StringBuilder("L→ < ");
         Nodo Aux = L;
         while (Aux != null) {
-            S = S + Aux.getDato() + " , ";
+            S.append(Aux.getDato());
             Aux = Aux.getEnlace();
+            if (Aux != null) {
+                S.append(" , ");
+            }
         }
-        S = S + " > ";
-        return S;
+        S.append(" >");
+        return S.toString();
     }
+
 
     public void Invertir() {
         InvertirR(L);
