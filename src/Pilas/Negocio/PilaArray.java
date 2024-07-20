@@ -1,5 +1,5 @@
 
-package Pilas;
+package Pilas.Negocio;
 
 import java.util.EmptyStackException;
 

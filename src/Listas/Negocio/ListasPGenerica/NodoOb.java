@@ -3,34 +3,32 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Listas.ListasPGenerica;
-
-import java.io.Serializable;
+package Listas.Negocio.ListasPGenerica;
 
 /**
  *
  * @author Victor
  */
-public class NodoG <Tipovar> implements Serializable{     Tipovar Dato;
-                                                          NodoG<Tipovar> Enlace; 
+public class NodoOb {     Object Dato;
+                           NodoOb Enlace; 
                            
-    public NodoG(){
+    public NodoOb(){
       Enlace=null;
     }              
-    public NodoG (Tipovar Dato){
+    public NodoOb (Object Dato){
        this.Dato=Dato;
         Enlace=null;    
     }
-    public void SetDato(Tipovar Dato){
+    public void SetDato(Object Dato){
        this.Dato=Dato;
     }
-    public Tipovar GetDato(){
+    public Object GetDato(){
         return Dato;
     }
-    public void SetEnlace(NodoG<Tipovar> P){
+    public void SetEnlace(NodoOb P){
       Enlace=P;
     }
-    public  NodoG<Tipovar> GetEnlace(){
+    public  NodoOb GetEnlace(){
        return Enlace;
     }
 

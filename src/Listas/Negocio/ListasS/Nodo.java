@@ -3,25 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Colas;
+package Listas.Negocio.ListasS;
 
 /**
  *
  * @author Victor
  */
-public class Nodo {  Nodo Enlace;
-                    int Dato;
+public class Nodo {
+    int Dato;
+    Nodo Enlace;
 
     public Nodo() {
         this.Enlace = null;
     }
 
-    public void setEnlace(Nodo Enlace) {
+    public Nodo(int Dato, Nodo Enlace) {
+        this.Dato = Dato;
         this.Enlace = Enlace;
     }
 
     public void setDato(int Dato) {
         this.Dato = Dato;
+    }
+
+    public void setEnlace(Nodo Enlace) {
+        this.Enlace = Enlace;
     }
 
     public int getDato() {
@@ -30,6 +36,10 @@ public class Nodo {  Nodo Enlace;
 
     public Nodo getEnlace() {
         return Enlace;
-    } 
-    
+    }
+
+    @Override
+    public String toString() {
+        return Dato + "->";
+    }
 }

@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Listas.ListasPGenerica;
+package Listas.Negocio.ListasPGenerica;
 
-import Listas.ListasPGenerica.Alumnos;
-import Listas.ListasPGenerica.ListaG;
+import Listas.Negocio.ListasPGenerica.Alumnos;
+import Listas.Negocio.ListasPGenerica.ListaG;
 
 /**
  *

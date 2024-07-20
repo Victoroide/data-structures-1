@@ -5,9 +5,9 @@
  */
 package Colas;
 
-import Colas.ColaL;
-import Colas.ColaV;
-import Colas.Colab;
+import Colas.Negocio.ColaL;
+import Colas.Negocio.ColaV;
+import Colas.Negocio.Colab;
 
 /**
  *

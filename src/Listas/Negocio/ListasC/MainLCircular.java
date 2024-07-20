@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Listas.ListasC;
+package Listas.Negocio.ListasC;
 
-import Listas.ListasC.ListaC;
+import Listas.Negocio.ListasC.ListaC;
 
 /**
  *
